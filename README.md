@@ -1,5 +1,7 @@
-# Welcome to GitHub Desktop!
+HELLO !
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+Here is the list of all the problems of SQL section in HackerRank.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+I hope you find it well.
+
+Mehmet
