@@ -1,0 +1,26 @@
+WITH NUMBERS AS (
+    			SELECT LEVEL AS NUM
+    			FROM DUAL
+    			CONNECT BY LEVEL <= 1000
+		),
+PRIMES AS (
+    		SELECT NUM
+    		FROM NUMBERS
+    		WHERE NUM IN (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31)
+       		OR (
+           		NUM > 1 AND
+            		MOD(NUM, 2) != 0 AND
+           		MOD(NUM, 3) != 0 AND
+           		MOD(NUM, 5) != 0 AND
+          		MOD(NUM, 7) != 0 AND
+         		MOD(NUM, 11) != 0 AND
+         		MOD(NUM, 13) != 0 AND
+         		MOD(NUM, 17) != 0 AND
+          		MOD(NUM, 19) != 0 AND
+           		MOD(NUM, 23) != 0 AND
+           		MOD(NUM, 29) != 0 AND
+          		MOD(NUM, 31) != 0
+      		  	)
+	    )
+SELECT LISTAGG(NUM, '&') WITHIN GROUP (ORDER BY NUM) AS PRIME_LIST
+FROM PRIMES;
